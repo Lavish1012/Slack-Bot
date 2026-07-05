@@ -1,1 +1,1 @@
-This is a bot.
+This is a slack bot project. 
