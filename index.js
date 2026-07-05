@@ -21,6 +21,16 @@ app.command("/superbot-ping", async ({ command, ack, respond }) => {
   console.log("bot is running!");
 })();
 
+app.command("/superbot-help", async ({ ack, respond }) => {
+  await ack();
+  await respond({
+    text:
+`Available Commands:
+/superbot-ping - Check bot latency
+/superbot-catfact - Get a cat fact`
+  });
+});
+
 app.command("/superbot-catfact", async ({ ack, respond }) => {
   await ack();
 
@@ -31,7 +41,6 @@ app.command("/superbot-catfact", async ({ ack, respond }) => {
     await respond({ text: "Failed to fetch a cat fact." });
   }
 });
-
 
 app.command("/superbot-joke", async ({ ack, respond }) => {
   await ack();
